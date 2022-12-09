@@ -1,0 +1,4 @@
+Bill breakdown: 
+salad:                    ....$2.5 
+tip:                      ....$10.00 
+total:                    ....$12.50 
