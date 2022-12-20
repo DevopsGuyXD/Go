@@ -4,5 +4,5 @@
 <p> - Display the time and date using default format or a custom format</p>
 
 <h3>Packages used:</h3>
-- fmt
-- time
+<p> - fmt</p>
+<p> - time</p>
