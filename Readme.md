@@ -10,7 +10,7 @@
 	<li>Empty variables</li>
 </ol>
 
-<hr style="width: 50%">
+<hr style="width: 10%">
 
 <p>Composite literals:</p>
 <ol>
