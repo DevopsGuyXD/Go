@@ -3,7 +3,7 @@
 
 <br><br>
 
-<h2 align="center">Core concepts:</h2>
+<h2 align="center">Core concepts:<br></h2>
 <h4>Variables:</h4>
 <ol>
 	<li>Short hand declaration</li>
