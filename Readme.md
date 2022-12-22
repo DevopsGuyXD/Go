@@ -29,8 +29,7 @@
 </ol>
 
 <hr>
-
-<br><br>
+<br>
 
 <h2 align="center">Conventions:</h2>
 <ol>
@@ -48,8 +47,7 @@
 </ol>
 
 <hr>
-
-<br><br>
+<br>
 
 <h2 align="center">Important things to remember:</h2>
 <ol>
@@ -87,8 +85,7 @@
 </ol>
 
 <hr>
-
-<br><br>
+<br>
 
 <h2 align="center">Basic commands:</h2>
 <ul>
@@ -100,4 +97,20 @@
 	<li>go test - Runs any test associated with the current project</li>
 	<li>go mod init <your_desired_project_name> - Initialize your code into project or module</li>
 	<li>go env -w GO111MODULE=auto - If external packages don't get downloaded</li>
+</ul>
+
+<hr>
+<br>
+
+<h2 align="center">Useful imports:</h2>
+<ul>
+	<li>fmt - Print to screen</li>
+	<li>log - Log to console</li>
+	<li>encoding/json - Encode the data to JSON</li>
+	<li>math/rand - Random number generator</li>
+	<li>net/http - Server</li>
+	<li>strconv - Convert to string</li>
+	<li>github.com/gorilla/mux - For creating routes</li>
+	<li>github.com/jinzhu/gorm" - Used for ORM</li>
+	<li>github.com/jinzhu/gorm/dialects/mysql" - For communication with MySQL</li>
 </ul>
