@@ -10,11 +10,22 @@
 	<li>Empty variables</li>
 </ol>
 
-<hr style="width: 10%">
+<hr>
 
 <p>Composite literals:</p>
 <ol>
 	<li>Slices</li>
 	<li>Maps</li>
 	<li>Structs</li>
+</ol>
+
+<hr>
+
+<p>Functions:</p>
+<ol>
+	<li>Returns</li>
+	<li>Receivers</li>
+	<li>Composition</li>
+	<li>Interface</li>
+	<li>Polymorphism</li>
 </ol>
