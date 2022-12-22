@@ -2,7 +2,7 @@
 <p>Look through the other branches for more information</p>
 
 <h2>Core concepts:</h2>
-<p><b>Variables:</b></p>
+<h4>Variables:</h4>
 <ol>
 	<li>Short-hand declaration</li>
 	<li>Package level declaration</li>
@@ -12,7 +12,7 @@
 
 <hr>
 
-<p><b>Composite literals:</b></p>
+<h4>Composite literals:</h4>
 <ol>
 	<li>Slices</li>
 	<li>Maps</li>
@@ -21,7 +21,7 @@
 
 <hr>
 
-<p><b>Functions:</b></p>
+<h4>Functions:</h4>
 <ol>
 	<li>Returns</li>
 	<li>Receivers</li>
