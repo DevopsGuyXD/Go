@@ -1,4 +1,4 @@
-<h1><center>One stop for your Golang needs</center></h1>
+<h1 align="center">One stop for your Golang needs</h1>
 <p>Look through the other branches for more information</p>
 
 <br><br>
