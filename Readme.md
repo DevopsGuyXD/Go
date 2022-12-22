@@ -12,7 +12,7 @@
 
 <hr>
 
-<p>Composite literals:</p>
+<p><b>Composite literals:</b></p>
 <ol>
 	<li>Slices</li>
 	<li>Maps</li>
@@ -21,7 +21,7 @@
 
 <hr>
 
-<p>Functions:</p>
+<p><b>Functions:</b></p>
 <ol>
 	<li>Returns</li>
 	<li>Receivers</li>
