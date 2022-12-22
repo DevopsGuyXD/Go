@@ -3,7 +3,9 @@
 
 <h2>Core concepts:</h2>
 <p>Variables</p>
-<ol>Short-hand declaration</ol>
-<ol>Package level declaration</ol>
-<ol>Scopes</ol>
-<ol>Empty variables</ol>
+<ol>
+<li>Short-hand declaration</li>
+<li>Package level declaration</li>
+<li>Scopes</li>
+<li>Empty variables</li>
+</ol>
