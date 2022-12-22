@@ -4,7 +4,7 @@
 <br><br>
 
 <h2 align="center">Core concepts:</h2>
-<h4>Variables:</h4>
+<h3>Variables:</h3>
 <ol>
 	<li>Short hand declaration</li>
 	<li>Package level declaration</li>
@@ -12,18 +12,14 @@
 	<li>Empty variables</li>
 </ol>
 
-<hr>
-
-<h4>Composite literals:</h4>
+<h3>Composite literals:</h3>
 <ol>
 	<li>Slices</li>
 	<li>Maps</li>
 	<li>Structs</li>
 </ol>
 
-<hr>
-
-<h4>Functions:</h4>
+<h3>Functions:</h3>
 <ol>
 	<li>Returns</li>
 	<li>Receivers</li>
@@ -31,8 +27,6 @@
 	<li>Interface</li>
 	<li>Polymorphism</li>
 </ol>
-
-<hr>
 
 <br><br>
 
