@@ -4,10 +4,17 @@
 <h2>Core concepts:</h2>
 <p>Variables:</p>
 <ol>
-<li>Short-hand declaration</li>
-<li>Package level declaration</li>
-<li>Scopes</li>
-<li>Empty variables</li>
+	<li>Short-hand declaration</li>
+	<li>Package level declaration</li>
+	<li>Scopes</li>
+	<li>Empty variables</li>
 </ol>
 
 <hr>
+
+<p>Composite literals:</p>
+<ol>
+	<li>Slices</li>
+	<li>Maps</li>
+	<li>Structs</li>
+</ol>
