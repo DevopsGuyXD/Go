@@ -60,21 +60,32 @@
 	<li>"var" keyword is used to create a variable without any value</li>
 	<li>"Sprintf" saves the value but doesn't print it to the screen</li>
 	<li>There are two types of values.</li>
-	<ol>
-		<li>Non-Pointer values: Original values are not updated by default, a copy is made with an updated value. Use * in order to update the original value</li>
-			<ul>
-				<li>Strings</li>
-				<li>Ints</li>
-				<li>Floats</li>
-				<li>Booleans</li>
-				<li>Arrays</li>
-				<li>Structs</li>
-			</ul>
-		<li>Pointer Wrapper values: The original values are updated</li>
-			<ul>
-				<li>Slices</li>
-				<li>Maps</li>
-				<li>Functions</li>
-			</ul>
-	</ol>
+		<ol>
+			<li>Non-Pointer values: Original values are not updated by default, a copy is made with an updated value. Use * in order to update the original value</li>
+				<ul>
+					<li>Strings</li>
+					<li>Ints</li>
+					<li>Floats</li>
+					<li>Booleans</li>
+					<li>Arrays</li>
+					<li>Structs</li>
+				</ul>
+			<li>Pointer Wrapper values: The original values are updated</li>
+				<ul>
+					<li>Slices</li>
+					<li>Maps</li>
+					<li>Functions</li>
+				</ul>
+		</ol>
+	<li>Struct's are used as blueprints like constructors in java</li>
+	<li>If the struct values are uppercase then they are accessible from outside the package</li>
+	<li>If the struct values are lowercase then they are accessible only within the package</li>
+	<li>"Receivers" are functions that are associated with Structs</li>
+	<li>"*" is used for pointing to an object in memory</li>
+	<li>"&" is to used for finding the location of the object in memory</li>
+	<li>You can build the projects for different operating systems</li>
+		<ul>
+			<li>GOOS = "windows" go build</li>
+			<li>GOOS = "linux" go build</li>
+		</ul>
 </ol>
