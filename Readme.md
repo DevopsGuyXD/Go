@@ -1,2 +1,9 @@
 <h1>One stop for your Golang needs</h1>
-<p>Look through the other branches to find what your looking for</p>
+<p>Look through the other branches for more information</p>
+
+<h2>Core concepts:</h2>
+<p>Variables</p>
+<ol>Short-hand declaration</ol>
+<ol>Package level declaration</ol>
+<ol>Scopes</ol>
+<ol>Empty variables</ol>
