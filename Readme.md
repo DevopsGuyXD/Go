@@ -28,6 +28,8 @@
 	<li>Polymorphism</li>
 </ol>
 
+<hr>
+
 <br><br>
 
 <h2 align="center">Conventions:</h2>
