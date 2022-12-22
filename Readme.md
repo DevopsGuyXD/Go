@@ -89,3 +89,19 @@
 			<li>GOOS = "linux" go build</li>
 		</ul>
 </ol>
+
+<hr>
+
+<br><br>
+
+<h2 align="center">Basic commands:</h2>
+<ol>
+	<li>go build - Compiles a bunch of go source code files</li>
+	<li>go run - Compiles or executes one or two file</li>
+	<li>go fmt - Formats all the code in each file in the current directory</li>
+	<li>go install - Compiles and installs a package</li>
+	<li>go get - Downloads the raw source code of someone else's package</li>
+	<li>go test - Runs any test associated with the current project</li>
+	<li>go mod init <your_desired_project_name> - Initialize your code into project or module</li>
+	<li>go env -w GO111MODULE=auto - If external packages don't get downloaded</li>
+</ol>
