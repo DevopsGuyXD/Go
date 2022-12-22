@@ -1,9 +1,9 @@
 <h1 align="center">One stop for your Golang needs</h1>
-<p>Look through the other branches for more information</p>
+<p align="center">Look through the other branches for more information</p>
 
 <br><br>
 
-<h2>Core concepts:</h2>
+<h2 align="center">Core concepts:</h2>
 <h4>Variables:</h4>
 <ol>
 	<li>Short-hand declaration</li>
