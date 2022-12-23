@@ -97,6 +97,7 @@
 	<li>go test - Runs any test associated with the current project</li>
 	<li>go mod init <your_desired_project_name> - Initialize your code into project or module</li>
 	<li>go env -w GO111MODULE=auto - If external packages don't get downloaded</li>
+	<li>go run GOPATH - Shows the GO path</li>
 </ul>
 
 <hr>
