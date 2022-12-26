@@ -98,6 +98,7 @@
 	<li><b>go mod init <your_desired_project_name>:</b> Initialize your code into project or module</li>
 	<li><b>go mod tidy:</b> Removes unused modules</li>
 	<li><b>go mod verify:</b></li>
+	<li><b>go mod vendor:</b> Like node_modules in NodeJS</li>
 	<li><b>go env -w GO111MODULE=auto:</b> If external packages don't get downloaded</li>
 	<li><b>go run GOPATH:</b> Shows the GO path</li>
 </ul>
