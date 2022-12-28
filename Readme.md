@@ -117,4 +117,5 @@
 	<li>github.com/gorilla/mux - For creating routes</li>
 	<li>github.com/jinzhu/gorm" - Used for ORM</li>
 	<li>github.com/jinzhu/gorm/dialects/mysql" - For communication with MySQL</li>
+	<li>github.com/joho/godotenv - Use .env file</li>
 </ul>
