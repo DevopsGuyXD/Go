@@ -108,14 +108,14 @@
 
 <h2 align="center">Useful imports:</h2>
 <ul>
-	<li>fmt - Print to screen</li>
-	<li>log - Log to console</li>
-	<li>encoding/json - Encode the data to JSON</li>
-	<li>math/rand - Random number generator</li>
-	<li>net/http - Server</li>
-	<li>strconv - Convert to string</li>
-	<li>github.com/gorilla/mux - For creating routes</li>
-	<li>github.com/jinzhu/gorm" - Used for ORM</li>
-	<li>github.com/jinzhu/gorm/dialects/mysql" - For communication with MySQL</li>
-	<li>github.com/joho/godotenv - Use .env file</li>
+	<li><b>fmt</b> - Print to screen</li>
+	<li><b>log</b> - Log to console</li>
+	<li><b>encoding/json</b> - Encode the data to JSON</li>
+	<li><b>math/rand</b> - Random number generator</li>
+	<li><b>net/http</b> - Server</li>
+	<li><b>strconv</b> - Convert to string</li>
+	<li><b>github.com/gorilla/mux</b> - For creating routes</li>
+	<li><b>github.com/jinzhu/gorm</b> - Used for ORM</li>
+	<li><b>github.com/jinzhu/gorm/dialects/mysql</b> - For communication with MySQL</li>
+	<li><b>github.com/joho/godotenv</b> - Use .env file</li>
 </ul>
