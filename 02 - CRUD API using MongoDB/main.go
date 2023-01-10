@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	controllers "github.com/DevopsguyXD/test/Controllers"
+	config "github.com/DevopsguyXD/test/Config"
 	routes "github.com/DevopsguyXD/test/Routes"
 	utils "github.com/DevopsguyXD/test/Utils"
 )
@@ -13,7 +13,7 @@ import (
 func main() {
 
 	utils.InitEnvFile()
-	controllers.MongoConnection()
+	config.MongoConnection()
 
 	server := routes.RouteCollection()
 
