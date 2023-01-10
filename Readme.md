@@ -1,1 +1,1 @@
-<h1 align="center">Projects</h1>
+<h1>Projects</h1>
