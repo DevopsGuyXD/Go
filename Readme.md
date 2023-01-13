@@ -120,4 +120,5 @@
 	<li><b>github.com/joho/godotenv</b> - Use .env file</li>
 	<li><b>go.mongodb.org/mongo-driver/mongo</b> - Connet to mongoDB</li>
 	<li><b>go.mongodb.org/mongo-driver/bson/primitive</b> - Creates a unique _id in the mongoDB</li>
+	<li><b>github.com/gin-gonic/gin</b> - Download gin</li>
 </ul>
