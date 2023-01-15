@@ -18,6 +18,4 @@ func main() {
 	// Split at white spaces
 	teststringparsed = strings.Split(teststring," ")
 	fmt.Println(teststring)
-
-	strings.
 }
