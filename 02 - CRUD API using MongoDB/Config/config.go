@@ -10,10 +10,9 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
+var Collection *mongo.Collection
 
-func MongoConnection() *mongo.Collection{
-
-	var collection *mongo.Collection
+func MongoConnection(){
 
 	utils.InitEnvFile()
 
@@ -23,8 +22,6 @@ func MongoConnection() *mongo.Collection{
 	utils.CheckForNil(err)
 
 	fmt.Println("MongoDB connecteed successfully...")
-	collection = client.Database(os.Getenv("DB_NAME")).Collection(os.Getenv("COL_NAME"))
+	Collection = client.Database(os.Getenv("DB_NAME")).Collection(os.Getenv("COL_NAME"))
 	fmt.Println("Collection ready to serve...")
-
-	return collection
 }

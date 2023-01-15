@@ -16,15 +16,13 @@ type Netflix struct {
 	Watched bool `json:"watched,omitempty"`
 }
 
-var Collection = config.MongoConnection()
-
 // -------------------- DB Helpers
 // --- Get all movies
 func MgetAllMovies() []primitive.M{
 
 	filter := bson.D{{}}
 
-	res, err := Collection.Find(context.Background(), filter)
+	res, err := config.Collection.Find(context.Background(), filter)
 	utils.CheckForNil(err)
 
 	var allMovies []primitive.M
@@ -40,7 +38,7 @@ func MgetAllMovies() []primitive.M{
 
 // --- Create movie
 func McreateMovie(movie Netflix){
-	res, err := Collection.InsertOne(context.Background(),movie)
+	res, err := config.Collection.InsertOne(context.Background(),movie)
 	utils.CheckForNil(err)
 
 	fmt.Println("Movie created successfully")
@@ -56,7 +54,7 @@ func MupdateMovie(movieId string) int64{
 	filter := bson.M{"_id":id}
 	update := bson.M{"$set":bson.M{"watched":true}}
 
-	res, err := Collection.UpdateOne(context.Background(), filter, update)
+	res, err := config.Collection.UpdateOne(context.Background(), filter, update)
 	utils.CheckForNil(err)
 
 	if res.ModifiedCount == 1{
@@ -77,7 +75,7 @@ func MdeleteMovie(movieId string) int64{
 
 	filter := bson.M{"_id":id}
 
-	res, err := Collection.DeleteOne(context.Background(), filter)
+	res, err := config.Collection.DeleteOne(context.Background(), filter)
 	utils.CheckForNil(err)
 
 	if res.DeletedCount == 1{
@@ -96,7 +94,7 @@ func MdeleteAllMovies(){
 
 	filter := bson.D{{}}
 
-	res, err := Collection.DeleteMany(context.Background(),filter)
+	res, err := config.Collection.DeleteMany(context.Background(),filter)
 	utils.CheckForNil(err)
 
 	fmt.Println("All movies delete successfully",res.DeletedCount )	
