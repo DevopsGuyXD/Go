@@ -19,9 +19,10 @@ func main() {
 func DecodeJson() {
 	jsonData := []byte(`
 		{
-		"coursename": "ReactJS",
+		"name" : "self_learning.io",
 		"Price":      299,
-		"website": "google.com"
+		"platform": "ReactJS",
+		"password": "Pa55word@123"
 		}
 	`)
 
