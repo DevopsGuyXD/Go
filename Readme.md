@@ -122,5 +122,5 @@
 	<li><b>go.mongodb.org/mongo-driver/bson/primitive</b> - Creates a unique _id in the mongoDB</li>
 	<li><b>github.com/gin-gonic/gin</b> - Download gin</li>
 	<li><b>github.com/Azure/azure-sdk-for-go/sdk/storage/azblob</b> - Azure blob</li>
-	<ii><b>github.com/xuri/excelize/v2</b> - Write to Excel sheep</li>
+	<li><b>github.com/xuri/excelize/v2</b> - Write to Excel sheep</li>
 </ul>
