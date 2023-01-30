@@ -13,8 +13,8 @@ func main(){
 
 	wg.Add(2)
 
-	mark1()
-	mark2()
+	go mark1()
+	go mark2()
 
 	wg.Wait()
 
