@@ -123,4 +123,7 @@
 	<li><b>github.com/gin-gonic/gin</b> - Download gin</li>
 	<li><b>github.com/Azure/azure-sdk-for-go/sdk/storage/azblob</b> - Azure blob</li>
 	<li><b>github.com/xuri/excelize/v2</b> - Write to Excel sheep</li>
+	<li><b>github.com/aws/aws-sdk-go-v2/aws</b> - AWS SDK</li>
+	<li><b>github.com/aws/aws-sdk-go-v2/config</b> - AWS SDK config</li>
+	<li><b>github.com/aws/aws-sdk-go-v2/service/secretsmanager</b> - AWS SDK secret manager</li>
 </ul>
