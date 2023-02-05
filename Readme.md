@@ -79,8 +79,8 @@
 	<li>"&" is to used for finding the location of the object in memory</li>
 	<li>You can build the projects for different operating systems</li>
 		<ul>
-			<li>GOOS = "windows" go build main.go</li>
-			<li>GOOS = "linux" go build main.go</li>
+			<li>GOOS="windows" go build main.go</li>
+			<li>GOOS="linux" go build main.go</li>
 			<li>GOOS="linux" GOARCH=amd64 go build main.go</li>
 		</ul>
 </ol>
