@@ -81,6 +81,7 @@
 		<ul>
 			<li>GOOS = "windows" go build main.go</li>
 			<li>GOOS = "linux" go build main.go</li>
+			<li>GOOS="linux" GOARCH=amd64 go build main.go</li>
 		</ul>
 </ol>
 
