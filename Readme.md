@@ -126,4 +126,5 @@
 	<li><b>github.com/aws/aws-sdk-go-v2/aws</b> - AWS SDK</li>
 	<li><b>github.com/aws/aws-sdk-go-v2/config</b> - AWS SDK config</li>
 	<li><b>github.com/aws/aws-sdk-go-v2/service/secretsmanager</b> - AWS SDK secret manager</li>
+	<li><b>github.com/aws/aws-lambda-go</b> - AWS Lambda</li>
 </ul>
