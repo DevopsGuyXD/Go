@@ -128,4 +128,5 @@
 	<li><b>github.com/aws/aws-sdk-go-v2/config</b> - AWS SDK config</li>
 	<li><b>github.com/aws/aws-sdk-go-v2/service/secretsmanager</b> - AWS SDK secret manager</li>
 	<li><b>github.com/aws/aws-lambda-go</b> - AWS Lambda</li>
+	<li><b>golang.org/x/exp/constraints</b> - Generics</li>
 </ul>
