@@ -10,7 +10,7 @@ import (
 	"github.com/dgrijalva/jwt-go"
 )
 
-var SECRET = []byte("super-secret-auth-key")
+var SigningKey = []byte("ItJSGtVkoU8JB3QJgoZupPXenb5tuiEmpLh3EEIgYrM=")
 var api_key = "1234"
 
 
@@ -20,20 +20,20 @@ func CheckForNil(err error) {
 	}
 }
 
-
 func GetJWT(w http.ResponseWriter, r *http.Request){
+	w.Header().Set("Content-Type","application/json")
+	
 	if r.Header["Access"] != nil{
 
 		if r.Header["Access"][0] != api_key{
 			fmt.Println("API key doesn't match")
 
 		}else{
-
 			token := jwt.New(jwt.SigningMethodHS256)
 			claims := token.Claims.(jwt.MapClaims)
 			claims["exp"] = time.Now().Add(time.Hour).Unix()
 		
-			tokenStr, err := token.SignedString(SECRET); if err != nil{
+			tokenStr, err := token.SignedString(SigningKey); if err != nil{
 				fmt.Println(err.Error())
 			}
 
@@ -43,7 +43,7 @@ func GetJWT(w http.ResponseWriter, r *http.Request){
 	}
 }
 
-func ValidateJWT(validation func(w http.ResponseWriter, r *http.Request)) http.Handler{
+func ValidateJWT(next func(w http.ResponseWriter, r *http.Request)) http.Handler{
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request){
 
 		if r.Header["Token"] != nil{
@@ -55,7 +55,7 @@ func ValidateJWT(validation func(w http.ResponseWriter, r *http.Request)) http.H
 					w.Write([]byte("not authorized"))
 				}
 
-				return SECRET, nil
+				return SigningKey, nil
 
 			}); if err != nil{
 				w.WriteHeader(http.StatusUnauthorized)
@@ -63,7 +63,7 @@ func ValidateJWT(validation func(w http.ResponseWriter, r *http.Request)) http.H
 			}
 
 			if token.Valid{
-				validation(w, r)
+				next(w, r)
 			}
 
 		}else{
