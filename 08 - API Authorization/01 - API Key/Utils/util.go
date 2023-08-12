@@ -43,7 +43,7 @@ func GetJWT(w http.ResponseWriter, r *http.Request){
 	}
 }
 
-func ValidateJWT(next func(w http.ResponseWriter, r* http.Request)) http.Handler{
+func ValidateJWT(validation func(w http.ResponseWriter, r *http.Request)) http.Handler{
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request){
 
 		if r.Header["Token"] != nil{
@@ -63,13 +63,13 @@ func ValidateJWT(next func(w http.ResponseWriter, r* http.Request)) http.Handler
 			}
 
 			if token.Valid{
-				next(w, r)
+				validation(w, r)
 			}
 
 		}else{
 			w.WriteHeader(http.StatusUnauthorized)
 			w.Write([]byte("not authorized"))
-
 		}
+
 	})
 }
