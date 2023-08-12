@@ -10,38 +10,35 @@ import (
 	"github.com/dgrijalva/jwt-go"
 )
 
+var SECRET = []byte("super-secret-auth-key")
+var api_key = "1234"
+
+
 func CheckForNil(err error) {
 	if err != nil {
 		log.Fatal(err)
 	}
 }
 
-var SECRET = []byte("super-secret-auth-key")
-var api_key = "1234"
-
-func CreateJWT() (string, error){
-
-	token := jwt.New(jwt.SigningMethodHS256)
-	claims := token.Claims.(jwt.MapClaims)
-	claims["exp"] = time.Now().Add(time.Hour).Unix()
-
-	tokenStr, err := token.SignedString(SECRET); if err != nil{
-		fmt.Println(err.Error())
-		return "", err
-	}
-
-	return tokenStr, nil
-}
 
 func GetJWT(w http.ResponseWriter, r *http.Request){
 	if r.Header["Access"] != nil{
+
 		if r.Header["Access"][0] != api_key{
-			fmt.Println("Access keys dont match")
+			fmt.Println("API key doesn't match")
+
 		}else{
-			token, err := CreateJWT(); if err != nil{
-				return
+
+			token := jwt.New(jwt.SigningMethodHS256)
+			claims := token.Claims.(jwt.MapClaims)
+			claims["exp"] = time.Now().Add(time.Hour).Unix()
+		
+			tokenStr, err := token.SignedString(SECRET); if err != nil{
+				fmt.Println(err.Error())
 			}
-		json.NewEncoder(w).Encode(token)
+
+		json.NewEncoder(w).Encode(tokenStr)
+
 		}
 	}
 }
