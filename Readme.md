@@ -129,4 +129,5 @@
 	<li><b>github.com/aws/aws-sdk-go-v2/service/secretsmanager</b> - AWS SDK secret manager</li>
 	<li><b>github.com/aws/aws-lambda-go</b> - AWS Lambda</li>
 	<li><b>golang.org/x/exp/constraints</b> - Generics</li>
+	<li><b>github.com/dgrijalva/jwt-go</b> - JWT Token</li>
 </ul>
