@@ -37,6 +37,7 @@ func GetJWT(w http.ResponseWriter, r *http.Request){
 				fmt.Println(err.Error())
 			}
 
+		fmt.Println("Acces token generated")
 		json.NewEncoder(w).Encode(tokenStr)
 
 		}
@@ -45,6 +46,8 @@ func GetJWT(w http.ResponseWriter, r *http.Request){
 
 func ValidateJWT(next func(w http.ResponseWriter, r *http.Request)) http.Handler{
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request){
+
+		w.Header().Set("Content-Type", "application/json")
 
 		if r.Header["Token"] != nil{
 
