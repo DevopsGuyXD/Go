@@ -22,10 +22,6 @@ func CheckForNil(err error) {
 	}
 }
 
-
-
-
-
 // Digest
 func sendDigestChallenge(w http.ResponseWriter) {
 	w.Header().Set("WWW-Authenticate", fmt.Sprintf(`Digest realm="%s", qop="auth", nonce="%s", opaque="%s"`, realm, nonce, opaque))
@@ -75,15 +71,17 @@ func DigestAuthHandler(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		authHeader := r.Header.Get("Authorization")
 
-		if authHeader == "" {
-			sendDigestChallenge(w)
-			return
-		}
+		fmt.Println(authHeader)
 
-		if !validateDigest(authHeader, r.Method) {
-			http.Error(w, "Unauthorized", http.StatusUnauthorized)
-			return
-		}
+		// if authHeader == "" {
+		// 	sendDigestChallenge(w)
+		// 	return
+		// }
+
+		// if !validateDigest(authHeader, r.Method) {
+		// 	http.Error(w, "Unauthor", http.StatusUnauthorized)
+		// 	return
+		// }
 
 		next.ServeHTTP(w, r)
 	}
