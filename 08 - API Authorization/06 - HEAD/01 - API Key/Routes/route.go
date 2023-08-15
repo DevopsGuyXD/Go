@@ -11,8 +11,8 @@ func RouteCollection() *mux.Router{
 
 	router := mux.NewRouter()
 
-	router.Handle("/", util.ValidateBearer(controller.HealthController)).Methods("GET")
-	router.HandleFunc("/bearer", util.GetBearerToken).Methods("GET")
+	router.HandleFunc("/", controller.HealthController).Methods("HEAD")
+	router.HandleFunc("/jwt", util.GetJWT).Methods("GET")
 
 	return router
 }
