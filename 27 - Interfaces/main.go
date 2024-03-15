@@ -2,47 +2,40 @@ package main
 
 import "fmt"
 
-type Bill interface{
-	PrintPrice()
+type Animal interface{
+	Attack()
 }
 
-type Book struct {
-	Name  string
-	Price int
+type Dog struct {
+	Color       string
+	Limbs       int
+	Attack_type string
 }
 
-type Drink struct {
-	Name  string
-	Price int
+type Cat struct {
+	Color       string
+	Limbs       int
+	Attack_type string
 }
 
-type Puzzle struct {
-	Name  string
-	Price int
+func (d Dog) Attack() string {
+	attack_points := 40
+	result := fmt.Sprintf("Attack type: %v\nAttack points: %v", d.Attack_type, attack_points)
+	return result
 }
 
-func (b Book) PrintPrice(){
-	fmt.Printf("Name: %v | Price: %v\n", b.Name, b.Price)
-}
-
-func (d Drink) PrintPrice(){
-	fmt.Printf("Name: %v | Price: %v\n", d.Name, d.Price)
-}
-
-func (p Puzzle) PrintPrice(){
-	fmt.Printf("Name: %v | Price: %v\n", p.Name, p.Price)
+func (c Cat) Attack() string {
+	attack_points := 5
+	result := fmt.Sprintf("Attack type: %v\nAttack points: %v", c.Attack_type, attack_points)
+	return result
 }
 
 func main() {
-	fmt.Println("Welcome to the interface test")
 
-	book := Book{"Java", 20}
-	drink := Drink{"Coffee", 10}
-	puzzle := Puzzle{"Rubics cube", 5}
+	dog := Dog{Color: "Black", Limbs: 4, Attack_type: "Bite"}
+	cat := Cat{Color: "Brown", Limbs: 4, Attack_type: "Scratch"}
+	
+	fmt.Println(dog.Attack())
+	fmt.Println(cat.Attack())
 
-	info := []Bill{ book, drink, puzzle }
-
-	info[0].PrintPrice()
-	info[1].PrintPrice()
-	info[2].PrintPrice()
 }
