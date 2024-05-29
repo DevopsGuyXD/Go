@@ -15,14 +15,14 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-var connectionString = "mongodb+srv://Bharath_Dundi:Pa55word123@cluster0.acb6y7s.mongodb.net/?retryWrites=true&w=majority"
+var connectionString = "<CONNECTION_STRING>"
 var dbName = "netflix"
 var colName = "watchlist"
 
 var collection *mongo.Collection
 
 func init(){
-	clientOption := options.Client().ApplyURI(`mongodb+srv://Bharath_Dundi:Pa55word123@cluster0.acb6y7s.mongodb.net/?retryWrites=true&w=majority`)
+	clientOption := options.Client().ApplyURI(`<CONNECTION_STRING>`)
 
 	client, err := mongo.Connect(context.TODO(),clientOption)
 	checkForNil(err)

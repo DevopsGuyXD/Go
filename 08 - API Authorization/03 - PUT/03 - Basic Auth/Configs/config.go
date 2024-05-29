@@ -9,7 +9,7 @@ import (
 )
 
 func MongoConnection() *mongo.Collection{
-	clientOptions := options.Client().ApplyURI("mongodb+srv://Bharath_Dundi:Pa55word123@cluster0.acb6y7s.mongodb.net/?retryWrites=true&w=majority")
+	clientOptions := options.Client().ApplyURI("<CONNECTION_STRING>")
 
 	client, err := mongo.Connect(context.TODO(), clientOptions); if err != nil{
 		fmt.Println("Cannot connect")
