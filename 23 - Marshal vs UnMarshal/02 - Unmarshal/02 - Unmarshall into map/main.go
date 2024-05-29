@@ -8,7 +8,7 @@ import (
 func main() {
 
 	var test_map map[string]string
-	test_string := `{"EMAIL_SENDER": <EMAIL ID>,"EMAIL_SENDER_PASSWORD": <PASSWORD>}`
+	test_string := `{"EMAIL_SENDER": <SENDER EMAIL ID>,"EMAIL_SENDER_PASSWORD": <SENDER EMAIL PASSWORD>}`
 
 	json.Unmarshal([]byte(test_string), &test_map)
 
