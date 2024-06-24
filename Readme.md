@@ -131,4 +131,5 @@
 	<li><b>golang.org/x/exp/constraints</b> - Generics</li>
 	<li><b>github.com/dgrijalva/jwt-go</b> - JWT Token</li>
 	<li><b>github.com/mattn/go-sqlite3</b> - For communication with SQLite</li>
+	<li><b>github.com/gorilla/websocket</b> - Websockets</li>
 </ul>
