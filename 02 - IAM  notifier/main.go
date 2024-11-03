@@ -1,11 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
 
-//================ (START) ================
+	util "github.com/DevopsGuyXD/IAM-Access-Key-Rotation/Utils"
+)
+
 func main() {
 
+	// ====================== Entry Point ========================
 	fmt.Printf("\nWelcome to IAM-Notifier\n")
-
+	util.InitAws()
 	GetAllIAMUsers()
 }

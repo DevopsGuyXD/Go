@@ -4,9 +4,11 @@ import (
 	"encoding/json"
 	"os/exec"
 	"strings"
+
+	util "github.com/DevopsGuyXD/IAM-Access-Key-Rotation/Utils"
 )
 
-//---------------- (STRUCTS) -----------------
+//======================= STRUCTS =======================
 type AllUsers struct{
 	Users []Users `json:"Users"`
 }
@@ -19,10 +21,8 @@ type Users struct{
 	CreateDate string	`json:"CreateDate"`
 	PasswordLastUsed string	`json:"PasswordLastUsed"`
 }
-//------------- (END STRUCTS) ----------------
 
-
-//----------------- (METHODS) ----------------
+//======================= METHODS =======================
 func (u AllUsers) GetUserCount() int{
 	return len(u.Users)
 }
@@ -37,19 +37,16 @@ func (u AllUsers) GetValedUsers(i int) string{
 
 	return users
 }
-//-------------- (END METHODS) -------------
 
-
-//--------------- (FUNCTION) ---------------
+//======================= FUNCTION =======================
 func GetAllIAMUsers() {
 
 	res, err := exec.Command("aws", "iam", "list-users").Output()
-	CheckForNil(err)
+	util.CheckForNil(err)
 
 	var allUsers AllUsers
 	err = json.Unmarshal(res, &allUsers)
-	CheckForNil(err)
+	util.CheckForNil(err)
 
 	FilterUsers(allUsers)
 }
-//------------- (END FUNCTION) --------------

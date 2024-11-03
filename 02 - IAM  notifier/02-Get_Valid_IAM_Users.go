@@ -4,9 +4,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"os/exec"
+
+	util "github.com/DevopsGuyXD/IAM-Access-Key-Rotation/Utils"
 )
 
-//---------------- (STRUCTS) -----------------
+//======================= STRUCTS =======================
 type AccessKeyInfo struct{
 	AccessKeyMetadata []AccessKeyCreationKeyDate `json:"AccessKeyMetadata"`
 }
@@ -17,17 +19,15 @@ type AccessKeyCreationKeyDate struct{
 	Status string `json:"Status"`
 	CreateDate string `json:"CreateDate"`
 }
-//------------- (END STRUCTS) ----------------
 
-
-//----------------- (METHODS) ----------------
+//======================= METHODS =======================
 func (u AccessKeyCreationKeyDate) GetAccessKeyCreationDates(user_name string) string{
 
 	var accesskeyinfo AccessKeyInfo
 	var return_value string
 
-	res, err := exec.Command("aws", "iam", "list-access-keys", "--user-name", user_name).Output(); CheckForNil(err)
-	err = json.Unmarshal(res, &accesskeyinfo); CheckForNil(err)
+	res, err := exec.Command("aws", "iam", "list-access-keys", "--user-name", user_name).Output(); util.CheckForNil(err)
+	err = json.Unmarshal(res, &accesskeyinfo); util.CheckForNil(err)
 	
 	if len(accesskeyinfo.AccessKeyMetadata) == 0{
 		return_value = "No access key"
@@ -37,10 +37,8 @@ func (u AccessKeyCreationKeyDate) GetAccessKeyCreationDates(user_name string) st
 
 	return return_value
 }
-//-------------- (END METHODS) -------------
 
-
-//--------------- (FUNCTION) ---------------
+//======================= FUNCTION =======================
 func FilterUsers(allUsers AllUsers) {
 
 	var accesskeycreationkeydate AccessKeyCreationKeyDate
@@ -58,7 +56,7 @@ func FilterUsers(allUsers AllUsers) {
 	check_status := "(1/2)Checking ."
 	for i := 0; i < len(users); i++ {
 		accesskey_dates = append(accesskey_dates, accesskeycreationkeydate.GetAccessKeyCreationDates(users[i]))
-		fmt.Printf(check_status)
+		fmt.Printf("%v",check_status)
 		check_status = "."
 	}
 
@@ -68,4 +66,3 @@ func FilterUsers(allUsers AllUsers) {
 	fmt.Println("")
 	fmt.Printf("\n%v\n","Completed \u2714")
 }
-//------------- (END FUNCTION) --------------
