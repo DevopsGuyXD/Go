@@ -1,0 +1,34 @@
+FROM alpine:latest as alpine
+    RUN apk --no-cache add tzdata zip ca-certificates
+
+FROM golang:1.20.3-alpine as builder
+WORKDIR /go/src/app
+
+    COPY --from=alpine /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+    COPY . .
+
+    RUN go mod init "github.com/DevopsGuyXD/SSL_Notifier"
+    RUN go get -u
+    RUN go mod tidy
+    RUN GOOS="linux" go build .
+
+FROM alpine:latest
+WORKDIR /go/src/app
+
+    ENV ACCESS_KEY_ID=""
+    ENV ACCESS_KEY_SECRET=""
+    ENV AWS_REGION=""
+    ENV EMAIL_SENDER_ID=""
+    ENV EMAIL_SENDER_PASSWORD=""
+    ENV RECEIPIENTS=""
+    ENV DAYS_TO_NOTIFY_BEFORE_EXPIRY=""
+    ENV IS_CRON=""
+    ENV CRON=""
+
+    COPY --from=builder /go/src/app/SSL_Notifier .
+    COPY --from=builder /go/src/app/.env .
+
+    RUN apk update
+    RUN apk add --no-cache aws-cli
+
+    ENTRYPOINT ["/go/src/app/SSL_Notifier"]
