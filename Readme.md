@@ -92,9 +92,9 @@
 <ul>
 	<li><b>gofmt -w .</b>Formats the code as per the golang standard</li>
 	<li><b>gofmt -l .</b>Shows what files are are going to be formatted</li>
+	<li><b>gofmt -s</b> Formats the code to a shorter syntax wherever possible</li>
 	<li><b>go build:</b> Compiles a bunch of go source code files</li>
 	<li><b>go run:</b> Compiles or executes one or two file</li>
-	<li><b>go fmt:</b> Formats all the code in each file in the current directory</li>
 	<li><b>go install:</b> Compiles and installs a package</li>
 	<li><b>go get:</b> Downloads the raw source code of someone else's package</li>
 	<li><b>go test:</b> Runs any test associated with the current project</li>
