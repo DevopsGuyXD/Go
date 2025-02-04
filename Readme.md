@@ -118,6 +118,7 @@
 	<li><b>net/http</b> - Server</li>
 	<li><b>strconv</b> - Convert to string</li>
 	<li><b>github.com/gorilla/mux</b> - For creating routes</li>
+	<li><b>github.com/go-chi/chi/v5</b> - Another option for creating routes</li>
 	<li><b>github.com/jinzhu/gorm</b> - Used for ORM</li>
 	<li><b>github.com/jinzhu/gorm/dialects/mysql</b> - For communication with MySQL</li>
 	<li><b>github.com/joho/godotenv</b> - Use .env file</li>
