@@ -30,3 +30,9 @@ func TestQueryParameter(w http.ResponseWriter, r *http.Request) {
 
 	json.NewEncoder(w).Encode(fullName)
 }
+
+func TestProtectedController(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Typ", "application/json")
+
+	w.Write([]byte("Logged in successfully"))
+}
