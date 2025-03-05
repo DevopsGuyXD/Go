@@ -8,20 +8,26 @@ import (
 	"time"
 )
 
-// Function to make a simple API request
-func fetchAPI(url string, wg *sync.WaitGroup, ch chan<- string) {
+func fetchAPIChannel(url string, wg *sync.WaitGroup, ch chan<- string) {
 	defer wg.Done()
-	resp, err := http.Get(url)
-	if err != nil {
-		ch <- fmt.Sprintf("Error: %v", err)
-		return
-	}
-	body, _ := io.ReadAll(resp.Body)
-	resp.Body.Close()
-	ch <- fmt.Sprintf("Concurrent Response Length: %d", len(body))
+	res, _ := http.Get(url)
+	body, _ := io.ReadAll(res.Body)
+	res.Body.Close()
+
+	ch <- fmt.Sprintf("Concurrent Length: %d", len(body))
+}
+
+func fetchAPI(url string) string {
+	res, _ := http.Get(url)
+	body, _ := io.ReadAll(res.Body)
+	res.Body.Close()
+
+	return fmt.Sprintf("Sequential Length: %d", len(body))
 }
 
 func main() {
+	fmt.Println("Goroutines and Channels test")
+
 	urls := []string{
 		"https://jsonplaceholder.typicode.com/todos/1",
 		"https://jsonplaceholder.typicode.com/todos/2",
@@ -30,24 +36,21 @@ func main() {
 		"https://jsonplaceholder.typicode.com/todos/5",
 	}
 
-	//---------------------------- Sequential Execution
+	//----- Sequential
 	start := time.Now()
 	for _, url := range urls {
-		resp, _ := http.Get(url)
-		body, _ := io.ReadAll(resp.Body)
-		resp.Body.Close()
-		fmt.Printf("Sequential Response Length: %d\n", len(body))
+		fmt.Println(fetchAPI(url))
 	}
-	fmt.Printf("Sequential Execution Time:%v\n\n", time.Since(start))
+	fmt.Printf("Sequential Total:%v \n\n", time.Since(start))
 
-	////---------------------------- Concurrent Execution using Goroutines
+	//----- Concurrent
 	start = time.Now()
 	var wg sync.WaitGroup
 	ch := make(chan string, len(urls))
 
 	for _, url := range urls {
 		wg.Add(1)
-		go fetchAPI(url, &wg, ch)
+		go fetchAPIChannel(url, &wg, ch)
 	}
 
 	go func() {
@@ -59,5 +62,6 @@ func main() {
 		fmt.Println(res)
 	}
 
-	fmt.Println("Concurrent Execution Time:", time.Since(start))
+	fmt.Printf("Concurrent Total:%v \n\n", time.Since(start))
+
 }
