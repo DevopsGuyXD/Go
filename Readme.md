@@ -104,7 +104,6 @@
 	<li><b>go mod vendor:</b> Like node_modules in NodeJS</li>
 	<li><b>go env -w GO111MODULE=auto:</b> If external packages don't get downloaded</li>
 	<li><b>go run GOPATH:</b> Shows the GO path</li>
-	<li><b>go test -v ./<FILE_PATH> -run <FUNC_NAME></b> Run a specific test function</li>
 </ul>
 
 <hr>
