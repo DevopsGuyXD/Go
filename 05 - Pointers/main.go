@@ -5,10 +5,20 @@ import "fmt"
 func main() {
 	fmt.Println("welcome to a class on pointers")
 
-	myNumber := 23
+	age := 30
 
-	var ptr = &myNumber
-
-	fmt.Println(ptr)
-	fmt.Println(*ptr)
+	adultYears := getAdultYears(&age)
+	fmt.Println(adultYears)
+	updateValueinMem(&age)
 }
+
+func getAdultYears(age *int) int {
+	return *age - 10
+}
+
+func updateValueinMem(age *int){
+	*age = *age - 10
+}
+
+// Use pointers only when values are very large
+// Most often causes confusion if not used carefuly
