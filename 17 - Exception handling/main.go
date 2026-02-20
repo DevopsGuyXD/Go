@@ -8,7 +8,6 @@ import (
 
 func main() {
 	fmt.Println("Welcome to the lesson on checking for NIL errors")
-
 	WriteToFile("./Testfile", "This is a test file that needs to be written")
 }
 
@@ -17,7 +16,6 @@ func WriteToFile(fileName string, content string){
 	checkNilError(err)
 
 	length, err := io.WriteString(file, content)
-	checkNilError(err)
 
 	fmt.Printf(`File written successfully`)
 	fmt.Printf(`Total characters written: %v`, length)
@@ -30,3 +28,6 @@ func checkNilError(err error){
 		panic(err)
 	}
 }
+
+// Note: You can also use error.New("This is a custom error message") to generate custom error messages.
+// Do not use fmt.Println() for this
